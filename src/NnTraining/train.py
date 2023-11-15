@@ -37,7 +37,7 @@ class Train(ValueNn):
 	def compile_keras_model(self, keras_model):
 		''' compiles keras model '''
 		loss = BasicHuberLoss(delta=1.0)
-		optimizer = tf.keras.optimizers.legacy.Adam(lr=arguments.learning_rate, beta_1=0.9, beta_2=0.999, decay=0.0)
+		optimizer = tf.keras.optimizers.legacy.Adam(learning_rate=arguments.learning_rate, beta_1=0.9, beta_2=0.999, decay=0.0)
 		keras_model.compile(loss=loss, optimizer=optimizer, metrics=[masked_huber_loss])
 
 

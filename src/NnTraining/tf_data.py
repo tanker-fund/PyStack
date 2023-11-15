@@ -15,8 +15,8 @@ def create_parse_fn(x_shape, y_shape):
 		# Define a dict with the data-names and types we expect to
 		# find in the TFRecords file.
 		features = {
-					'input': tf.FixedLenFeature([], tf.string),
-					'output': tf.FixedLenFeature([], tf.string)
+					'input': tf.io.FixedLenFeature([], tf.string),
+					'output': tf.io.FixedLenFeature([], tf.string)
 				   }
 		# Parse the serialized data so we get a dict with our data.
 		parsed_example = tf.parse_single_example( serialized=serialized,
