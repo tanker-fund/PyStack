@@ -4,13 +4,15 @@
 import os
 import numpy as np
 
+root_path = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "../.."))
+
 class Parameters():
 	def __init__(self):
 		# the tensor datatype used for storing DeepStack's internal data
 		self.dtype = np.float32
 		self.int_dtype = np.int16
 		# cached results path (caching only first street)
-		self.cache_path = './data/cache/'
+		self.cache_path = os.path.join(root_path, 'data/cache/')
 		# self.cache_path = r'D:\Datasets\Pystack\cache'
 		# GAME INFORMATION
 		# list of pot-scaled bet sizes to use in tree
@@ -24,7 +26,7 @@ class Parameters():
 		# NEURAL NETWORK
 		self.XLA = True
 		# path to the neural net model
-		self.model_path = './data/Models/'
+		self.model_path = os.path.join(root_path, 'data/Models/')
 		# self.model_path = r'D:\Datasets\Pystack\models'
 		# self.model_filename = 'weights.{epoch:02d}-{val_loss:.2f}' # show epoch and loss on filename
 		self.model_filename ='weights' # without ending
@@ -41,7 +43,7 @@ class Parameters():
 		self.tfrecords_batch_size = 1024*10 # ~200MB
 		# DATA GENERATION
 		# path to the solved poker situation data used to train the neural net
-		self.data_path = './data/TrainSamples/'
+		self.data_path = os.path.join(root_path, 'data/TrainSamples/')
 		# self.data_path = r'D:\Datasets\Pystack\NoLimitTexasHoldem'
 		# the number of iterations that DeepStack runs CFR for
 		self.cfr_iters = 300
