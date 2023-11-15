@@ -31,6 +31,7 @@ def main():
 	# create data directories
 	data_dirs = []
 	data_dirs.append( os.path.join(os.getcwd(), 'data', 'TrainSamples', street_name, '{}_{}'.format(approximate, 'tfrecords')) )
+	print("Data Dirs:", data_dirs)
 	# data_dirs.append( os.path.join(r'D:\Datasets\Pystack\NoLimitTexasHoldem\river', 'tfrecords_1m_16') )
 	T = Train(data_dir_list=data_dirs, street=street)
 	T.train(num_epochs=arguments.num_epochs, batch_size=arguments.batch_size, validation_size=0.1, start_epoch=starting_idx)
