@@ -20,6 +20,7 @@ def main():
 	street, starting_idx, approximate = parse_arguments(args)
 	street_name = card_to_string.street_to_name(street)
 	# directories
+	print("Data Path:", arguments.data_path)
 	NPY_DIR = os.path.join( arguments.data_path, street_name, '{}_{}'.format(approximate, 'npy') )
 	TFRECORDS_DIR = os.path.join( arguments.data_path, street_name, '{}_{}'.format(approximate, 'tfrecords') )
 	print('Initializing TFRecords Converter...')
