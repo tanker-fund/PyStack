@@ -33,7 +33,9 @@ class Parameters():
 		# the neural net architecture
 		self.num_neurons = [500,500,500,500] # must be size of num_layers
 		self.learning_rate = 1e-4
-		self.batch_size = 1024
+		# Control batch size for debugging
+		# self.batch_size = 1024
+		self.batch_size = 16
 		self.num_epochs = 50
 		# how often to save the model during training
 		self.save_epoch = 2
