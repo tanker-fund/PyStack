@@ -19,7 +19,7 @@ def create_parse_fn(x_shape, y_shape):
 					'output': tf.io.FixedLenFeature([], tf.string)
 				   }
 		# Parse the serialized data so we get a dict with our data.
-		parsed_example = tf.parse_single_example( serialized=serialized,
+		parsed_example = tf.io.parse_single_example( serialized=serialized,
 												  features=features )
 		# Get the image as raw bytes.
 		x_raw = parsed_example['input']
