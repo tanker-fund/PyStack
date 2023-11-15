@@ -17,7 +17,7 @@ from arguments_parser import parse_arguments
 
 
 if arguments.XLA:
-	config = tf.ConfigProto()
+	config = tf.compat.v1.ConfigProto()
 	config.graph_options.optimizer_options.global_jit_level = tf.OptimizerOptions.ON_1
 	sess = tf.Session(config=config)
 	tf.keras.backend.set_session(sess)
