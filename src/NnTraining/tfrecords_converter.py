@@ -118,7 +118,7 @@ class TFRecordsConverter():
 		filename = '{}.tfrecord'.format(self.counter)
 		out_path = os.path.join(dir_path, filename)
 		# Open a TFRecordWriter for the output-file.
-		with tf.python_io.TFRecordWriter(out_path) as writer:
+		with tf.io.TFRecordWriter(out_path) as writer:
 			# Iterate over all the X, Y pairs.
 			for x, y in zip(X, Y):
 				# Convert the image to raw bytes.
