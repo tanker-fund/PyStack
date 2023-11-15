@@ -26,9 +26,9 @@ def create_parse_fn(x_shape, y_shape):
 		y_raw = parsed_example['output']
 		# m_raw = parsed_example['mask']
 		# Decode the raw bytes so it becomes a tensor with type.
-		x = tf.decode_raw(x_raw, tf.float32)
-		y = tf.decode_raw(y_raw, tf.float32)
-		# m = tf.decode_raw(m_raw, tf.uint8)
+		x = tf.io.decode_raw(x_raw, tf.float32)
+		y = tf.io.decode_raw(y_raw, tf.float32)
+		# m = tf.io.decode_raw(m_raw, tf.uint8)
 		# apply transormations
 		# m = tf.cast(m, tf.float32)
 		# # repeat mask 2 times ex: (36,) -> (72,)
