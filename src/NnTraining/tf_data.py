@@ -70,8 +70,9 @@ def create_iterator( filenames, train, x_shape, y_shape, batch_size, num_cores=o
 	# prefetches last command
 	dataset = dataset.prefetch(buffer_size=1) # buffer_size=tf.contrib.data.AUTOTUNE
 	# Create an iterator for the dataset and the above modifications.
-	iterator = dataset.make_one_shot_iterator()
-	return iterator
+	# iterator = dataset.make_one_shot_iterator()
+	# return iterator
+	return dataset.__iter__()
 
 
 
