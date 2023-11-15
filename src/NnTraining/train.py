@@ -30,6 +30,7 @@ class Train(ValueNn):
 			self.compile_keras_model(self.keras_model)
 		# set up read paths for train/valid datasets
 		self.tfrecords = [f.path for dirpath in data_dir_list for f in os.scandir(dirpath)]
+		print('TFRecords', self.tfrecords)
 		# random.shuffle(self.tfrecords)
 		self.create_keras_callback()
 
