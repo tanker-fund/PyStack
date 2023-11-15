@@ -19,7 +19,8 @@ def main():
 	street_name = card_to_string.street_to_name(street)
 	dirpath = os.path.join( arguments.data_path, street_name, '{}_{}'.format(approximate, 'npy') )
 	data_generation = DataGeneration(dirpath)
-	data_generation.generate_data(street, approximate, starting_idx)
+	for i in range(100):
+		data_generation.generate_data(street, approximate, starting_idx + i)
 
 
 
